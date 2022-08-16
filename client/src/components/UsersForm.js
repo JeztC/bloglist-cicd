@@ -1,10 +1,8 @@
 import { useSelector } from 'react-redux'
 import {
-    BrowserRouter as Router,
     Routes,
     Route,
     Link,
-    BrowserRouter,
 } from 'react-router-dom'
 import User from './User'
 

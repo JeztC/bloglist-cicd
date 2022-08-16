@@ -6,4 +6,5 @@ const getAll = async () => {
     return request.data
 }
 
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default { getAll }

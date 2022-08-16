@@ -14,7 +14,6 @@ import BlogList from './components/BlogList'
 import User from './components/User'
 import HomePage from './components/HomePage'
 import Blog from './components/Blog'
-import Notification from './components/Notification'
 
 const App = () => {
     const [createBlogVisible, setCreateBlogVisible] = useState(false)

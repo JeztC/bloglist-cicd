@@ -53,4 +53,5 @@ const get = async (id) => {
     return request.data
 }
 
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default { setToken, create, getAll, put, get, deleteObject, addComment }
