@@ -1,0 +1,70 @@
+{
+    "name": "phonebookfull",
+    "version": "0.1.0",
+    "main": "/server/index.js",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.2.0",
+        "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.27.2",
+        "bcrypt": "^5.0.1",
+        "bootstrap": "^5.2.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "express-async-errors": "^3.1.1",
+        "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.21",
+        "mongoose": "^6.4.0",
+        "react": "^18.1.0",
+        "react-bootstrap": "^2.4.0",
+        "react-dom": "^18.1.0",
+        "react-scripts": "^5.0.1",
+        "redux": "^4.2.0",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "cross-env NODE_ENV=production node server/index.js",
+        "dev": "cross-env NODE_ENV=development nodemon server/index.js",
+        "build": "react-scripts build",
+        "test": "cross-env NODE_ENV=test jest --verbose --runInBand '--forceExit",
+        "eject": "react-scripts eject",
+        "start:test": "cross-env NODE_ENV=test node server/index.js"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "eslint": "^8.18.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-react": "^7.30.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "jest": "^28.1.1",
+        "json-server": "^0.17.0",
+        "nodemon": "^2.0.16",
+        "prettier": "2.7.1",
+        "supertest": "^6.2.3"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    }
+}
