@@ -19,6 +19,12 @@ jobs:
       - name: npm install
         run: npm install
       - name: build
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+          PORT: ${{ secrets.PORT }}
+          SECRET: ${{ secrets.SECRET }}
+          AUTHORIZATION_TOKEN: ${{ secrets.AUTHORIZATION_TOKEN }}
         run: npm run build
       - uses: cypress-io/github-action@v2
         with:
