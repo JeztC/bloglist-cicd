@@ -1,0 +1,29 @@
+name: Build Test and Deploy
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: npm install
+        run: npm install
+      - name: build
+        run: npm run build
+      - name: test
+        run: npm test
+      - uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start
+          wait-on: http://localhost:3000
