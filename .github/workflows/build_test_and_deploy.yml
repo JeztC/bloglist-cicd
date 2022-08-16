@@ -8,6 +8,13 @@ on:
     branches: [master]
     types: [opened, synchronize]
 
+env:
+  MONGODB_URI: ${{ secrets.MONGODB_URI }}
+  TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+  PORT: ${{ secrets.PORT }}
+  SECRET: ${{ secrets.SECRET }}
+  AUTHORIZATION_TOKEN: ${{ secrets.AUTHORIZATION_TOKEN }}
+
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
@@ -21,12 +28,6 @@ jobs:
       - name: build
         run: npm run build
       - uses: cypress-io/github-action@v2
-        env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
-          PORT: ${{ secrets.PORT }}
-          SECRET: ${{ secrets.SECRET }}
-          AUTHORIZATION_TOKEN: ${{ secrets.AUTHORIZATION_TOKEN }}
         with:
           command: npm run test:e2e
           start: npm run start
