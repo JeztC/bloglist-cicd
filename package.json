@@ -30,9 +30,9 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "concurrently \"cd client && react-scripts start\" \"cross-env NODE_ENV=production node server/index.js\"",
+        "start": "cross-env NODE_ENV=production node server",
         "dev": "cross-env NODE_ENV=development nodemon server/index.js",
-        "build": "cd ./client && npm run build",
+        "build": "cd client/ && npm install && npm run build",
         "test": "jest",
         "eject": "react-scripts eject",
         "start:test": "cross-env NODE_ENV=test node server/index.js",
