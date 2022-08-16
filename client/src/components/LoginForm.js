@@ -95,6 +95,7 @@ const LoginForm = (props) => {
                                             <button
                                                 className="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
                                                 type="submit"
+                                                id="login-button"
                                             >
                                                 Sign in
                                             </button>
