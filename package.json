@@ -1,5 +1,5 @@
 {
-    "name": "phonebookfull",
+    "name": "bloglistfullstack",
     "version": "0.1.0",
     "main": "/server/index.js",
     "private": true,
@@ -32,7 +32,7 @@
         "start": "cross-env NODE_ENV=production node server/index.js",
         "dev": "cross-env NODE_ENV=development nodemon server/index.js",
         "build": "cd ./client && npm run build",
-        "test": "cross-env NODE_ENV=test jest --verbose --runInBand '--forceExit",
+        "test": "jest",
         "eject": "react-scripts eject",
         "start:test": "cross-env NODE_ENV=test node server/index.js",
         "cypress:open": "cypress open",
