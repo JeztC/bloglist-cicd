@@ -29,6 +29,7 @@ jobs:
         run: npm run build
       - uses: cypress-io/github-action@v2
         with:
+          config-file: cypress.config.js
           command: npm run test:e2e
           start: npm run start
           wait-on: http://localhost:3001
