@@ -1,12 +1,12 @@
 describe('Blog app', function() {
   beforeEach(function() {
-    cy.request('POST', 'http://localhost:3000/api/testing/reset')
+    cy.request('POST', 'http://localhost:3001/api/testing/reset')
     const user = {
       name: 'Tester',
       username: 'Tester',
       password: 'lol'
     }
-    cy.request('POST', 'http://localhost:3000/api/users/', user)
+    cy.request('POST', 'http://localhost:3001/api/users/', user)
     cy.visit('http://localhost:3000')
   })
 
@@ -25,9 +25,9 @@ describe('Blog app', function() {
       cy.get('#login-button').click()
 
       cy.get('.error')
-        .should('contain', 'Wrong username or password')
-        .and('have.css', 'color', 'rgb(255, 0, 0)')
-        .and('have.css', 'border-style', 'solid')
+          .should('contain', 'Wrong username or password')
+          .and('have.css', 'color', 'rgb(255, 0, 0)')
+          .and('have.css', 'border-style', 'solid')
     })
   })
 })
