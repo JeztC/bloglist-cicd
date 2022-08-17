@@ -1,5 +1,4 @@
 .env
-./node_modules
 # Project exclude paths
 /client/node_modules/
 /node_modules/
