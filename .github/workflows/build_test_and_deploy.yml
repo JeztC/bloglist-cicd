@@ -16,7 +16,7 @@ env:
   AUTHORIZATION_TOKEN: ${{ secrets.AUTHORIZATION_TOKEN }}
 
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -27,9 +27,15 @@ jobs:
         run: npm install
       - name: build
         run: npm run build
-  deploy:
+      - name: test
+      - uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start
+          wait-on: https://blogapp-for-heroku.herokuapp.com
+  deploy_for_production:
     runs-on: ubuntu-20.04
-    needs: [build]
+    needs: [build_and_test]
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
