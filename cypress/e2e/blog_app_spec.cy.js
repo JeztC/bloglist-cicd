@@ -1,13 +1,13 @@
 describe('Blog app', function() {
   beforeEach(function() {
-    cy.request('POST', 'https://blogapp-for-heroku.herokuapp.com/api/testing/reset')
+    cy.request('POST', 'http://localhost:3000/api/testing/reset')
     const user = {
       name: 'Tester',
       username: 'Tester',
       password: 'lol'
     }
-    cy.request('POST', 'https://blogapp-for-heroku.herokuapp.com/api/users/', user)
-    cy.visit('https://blogapp-for-heroku.herokuapp.com')
+    cy.request('POST', 'http://localhost:3000/api/users/', user)
+    cy.visit('http://localhost:3000')
   })
 
   it('Login form is shown', function() {

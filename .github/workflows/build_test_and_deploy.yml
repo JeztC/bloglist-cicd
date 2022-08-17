@@ -32,7 +32,7 @@ jobs:
         with:
           command: npm run test:e2e
           start: npm run start
-          wait-on: https://blogapp-for-heroku.herokuapp.com
+          wait-on: http://localhost:3000
   deploy_for_production:
     runs-on: ubuntu-20.04
     needs: [build_and_test]
